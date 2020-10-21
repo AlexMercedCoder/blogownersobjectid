@@ -6,6 +6,7 @@ const cors = require("cors");
 const morgan = require("morgan");
 const { PORT = 6000 } = process.env;
 const mongoose = require("./db/conn");
+const blogRouter = require("./controllers/blog");
 
 // MIDDLEWARE
 app.use(cors());
@@ -16,6 +17,8 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("hello world");
 });
+
+app.use("/blog", blogRouter);
 
 // LISTENER
 app.listen(PORT, () => {
