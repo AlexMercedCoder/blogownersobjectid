@@ -5,6 +5,7 @@ const app = express();
 const cors = require("cors");
 const morgan = require("morgan");
 const { PORT = 6000 } = process.env;
+const mongoose = require("./db/conn");
 
 // MIDDLEWARE
 app.use(cors());
